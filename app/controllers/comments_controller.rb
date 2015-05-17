@@ -22,6 +22,10 @@ class CommentsController < ApplicationController
     redirect_to root_url
   end
 
+  def index
+    @comments = Comment.where('id > ?', params[:after_id].to_i).order('created_at DESC')
+  end
+
   private
 
   def comment_params
