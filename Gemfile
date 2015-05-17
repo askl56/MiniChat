@@ -12,9 +12,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Omniauth Gems
-
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+
+# Styling/FrontEnd
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'byebug'
