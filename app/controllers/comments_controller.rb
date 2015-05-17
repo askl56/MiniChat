@@ -13,6 +13,11 @@ class CommentsController < ApplicationController
       else
         flash[:error] = 'Your comment cannot be saved.'
       end
+      format.html {redirect_to root_url}
+      format.js
+    else
+      format.html {redirect_to root_url}
+      format.js {render nothing: true}
     end
     redirect_to root_url
   end

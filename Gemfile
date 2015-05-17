@@ -18,6 +18,9 @@ gem 'omniauth-twitter'
 # Styling/FrontEnd
 gem 'bootstrap-sass'
 
+#AJAX Gems
+gem 'jquery-turbolinks'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
