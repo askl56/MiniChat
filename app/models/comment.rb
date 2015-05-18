@@ -2,6 +2,11 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   validates :body, presence: true, length: {maximum: 2000}
 
+  def timestamp
+    created_at.strftime('%-d %B %Y, %H:%M:%S')
+
+  end
+
   class << self
     def remove_excessive!
       if all.count > 100
