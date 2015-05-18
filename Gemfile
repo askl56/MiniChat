@@ -21,6 +21,7 @@ gem 'puma'
 
 #AJAX Gems
 gem 'jquery-turbolinks'
+gem 'underscore-rails'
 
 group :development, :test do
   gem 'byebug'

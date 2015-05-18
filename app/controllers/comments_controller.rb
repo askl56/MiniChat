@@ -5,8 +5,10 @@ class CommentsController < ApplicationController
     response.headers['Content-Type'] = 'text/event-stream'
     sse = SSE.new(response.stream)
     begin
-      Comment.on_change do |data|
-        sse.write(data)
+      Comment.on_change do |id|
+        comment = Comment.find(id)
+        t = render_to_string(partial: 'comment', formats: [:html], locals: {comment: comment})
+        sse.write(t)
       end
     rescue IOError
       # Client Disconnected
