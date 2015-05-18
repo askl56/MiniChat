@@ -1,4 +1,20 @@
 class CommentsController < ApplicationController
+  include ActionController::Live
+
+  def index
+    response.headers['Content-Type'] = 'text/event-stream'
+    sse = SSE.new(response.stream)
+    begin
+      Comment.on_change do |data|
+        sse.write(data)
+      end
+    rescue IOError
+      # Client Disconnected
+    ensure
+      sse.close
+    end
+    render nothing: true
+  end
 
   def new
     @comment = Comment.new
