@@ -18,6 +18,9 @@ gem 'omniauth-twitter'
 # Styling/FrontEnd
 gem 'bootstrap-sass'
 
+gem 'faye-rails', '~> 2.0'
+gem 'thin'
+
 #AJAX Gems
 gem 'jquery-turbolinks'
 
