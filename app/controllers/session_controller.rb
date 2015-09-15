@@ -8,7 +8,7 @@ class SessionController < ApplicationController
 
   def destroy
     cookies.delete(:user_id)
-    flash[:success] = "See you!"
+    flash[:success] = 'See you!'
     redirect_to root_url
   end
 

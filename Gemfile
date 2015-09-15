@@ -21,7 +21,7 @@ gem 'bootstrap-sass'
 gem 'faye-rails', '~> 2.0'
 gem 'thin'
 
-#AJAX Gems
+# AJAX Gems
 gem 'jquery-turbolinks'
 
 group :development, :test do
@@ -29,4 +29,3 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
